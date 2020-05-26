@@ -90,10 +90,12 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{
-      from: './src/assets/images',
-      to: 'assets/images'
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: './src/assets/images',
+        to: 'assets/images'
+      }]
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
